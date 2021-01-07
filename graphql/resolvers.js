@@ -1,6 +1,9 @@
+import { getMoives } from "./api.db";
+import { getMovies, getById, addMovie, deleteMoive } from "./db"
+
 const resolvers = {
     Query: {
-        name: () => "hojoon"
+        movies: (_, { limit, rating }) => getMoives(limit, rating),
     }
 };
 
